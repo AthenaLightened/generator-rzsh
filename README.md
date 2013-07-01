@@ -1,5 +1,4 @@
 # Generator-rzsh
-[![Build Status](https://secure.travis-ci.org/AthenaLightened/generator-rzsh.png?branch=master)](https://travis-ci.org/AthenaLightened/generator-rzsh)
 
 A generator for Yeoman.
 
