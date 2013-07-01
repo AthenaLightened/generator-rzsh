@@ -1,0 +1,28 @@
+<VirtualHost *:80>
+    DocumentRoot "<%= _.slugify(appname) %>"
+    ServerName <%= _.slugify(appname) %>.localhost
+    ServerAlias <%= _.slugify(appname) %>.localhost
+
+    <Directory "<%= _.slugify(appname) %>">
+      Options Indexes FollowSymLinks
+      AllowOverride All
+      Order allow,deny
+      Allow from all
+      SetEnv YII_ENVIRONMENT DEVELOPMENT
+    </Directory>
+</VirtualHost>
+
+<VirtualHost *:80>
+    DocumentRoot "<%= _.slugify(appname) %>/webroot"
+    ServerName <%= _.slugify(appname) %>.localhost
+    ServerAlias prod.<%= _.slugify(appname) %>.localhost
+
+    <Directory "<%= _.slugify(appname) %>/webroot">
+      Options Indexes FollowSymLinks
+      AllowOverride All
+      Order allow,deny
+      Allow from all
+      SetEnv YII_ENVIRONMENT DEVELOPMENT
+    </Directory>
+</VirtualHost>
+
